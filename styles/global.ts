@@ -1,8 +1,10 @@
 import { css } from "@emotion/react";
 
 export const GlobalStyles = css`
-  * {
-    /* font-family: "Inter", sans-serif; */
+  html,
+  body {
     font-family: "Jost", sans-serif;
+    padding: 0;
+    margin: 0;
   }
 `;

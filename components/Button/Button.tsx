@@ -1,20 +1,42 @@
-import { MouseEvent } from "react";
+import { FC, MouseEvent } from "react";
 import styled from "@emotion/styled";
 import { css, SerializedStyles } from "@emotion/react";
 
 import { AppTheme } from "@/styles/themes";
-import { boxShadow, transition } from "@/components/styles";
+import { boxShadow, transition, borderRadius } from "@/components/styles";
 
 export type Color = "primary" | "secondary" | "danger" | "warning";
 
 export type Props = {
+  /** Text in the button */
   children: string;
+  /** Button color */
   color?: Color;
+  /** Click handler */
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 };
 
 export const getColors = (theme: AppTheme, color?: Color): SerializedStyles => {
   switch (color) {
+    case "secondary":
+      return css`
+        color: ${theme.font.regular};
+      `;
+    case "primary":
+    case "danger":
+      return css`
+        background: ${theme.components[color]};
+        color: ${theme.font.button};
+      `;
+    case "warning":
+      return css`
+        background: ${theme.components[color]};
+        color: ${theme.font.warning};
+      `;
+    default:
+      return css``;
+  }
+  /* switch (color) {
     case "primary":
       return css`
         background: #2efc32;
@@ -34,7 +56,7 @@ export const getColors = (theme: AppTheme, color?: Color): SerializedStyles => {
       `;
     default:
       return css``;
-  }
+  } */
 };
 
 export const Button = styled.button<Props>`
@@ -48,7 +70,7 @@ export const Button = styled.button<Props>`
   font-size: 1.6rem;
   width: 15rem;
   height: 4rem;
-  border-radius: 1rem;
+  ${borderRadius};
   transition: all 0.4s ease;
   ${({ color, theme }) => getColors(theme, color)};
   &:hover {
@@ -67,3 +89,21 @@ export const Button = styled.button<Props>`
 Button.defaultProps = {
   color: "primary",
 };
+
+type DefinedButton = Omit<Props, "color">;
+
+export const PrimaryButton: FC<DefinedButton> = (props) => (
+  <Button color="primary" {...props} />
+);
+
+export const SecondaryButton: FC<DefinedButton> = (props) => (
+  <Button color="secondary" {...props} />
+);
+
+export const DangerButton: FC<DefinedButton> = (props) => (
+  <Button color="danger" {...props} />
+);
+
+export const WarningButton: FC<DefinedButton> = (props) => (
+  <Button color="warning" {...props} />
+);
