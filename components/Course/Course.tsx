@@ -3,8 +3,6 @@ import Link from "next/link";
 import Image, { ImageProps } from "next/image";
 import styled from "@emotion/styled";
 
-import { Course as CourseType } from "@/types";
-
 import { boxShadow, borderRadius } from "@/components/styles";
 import { StyledLink } from "@/components/StyledLink";
 
