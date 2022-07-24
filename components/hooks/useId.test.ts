@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react-hooks";
 
-import { useId } from "./usdId";
+import { useId } from "./usedId";
 
 describe("useId check", () => {
   it("Id check", () => {
