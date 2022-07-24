@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image, { ImageProps } from "next/image";
 import styled from "@emotion/styled";
 
+import { Course as CourseType } from "@/types";
+
 import { boxShadow, borderRadius } from "@/components/styles";
 import { StyledLink } from "@/components/StyledLink";
 
@@ -36,13 +38,13 @@ export type Props = {
 };
 
 export const Course: FC<Props> = ({ children, header, link, imageProps }) => (
-  <Section>
-    <Link href={link} passHref>
-      <CourseLink>
+  <Link href={link} passHref>
+    <CourseLink>
+      <Section>
         <h2>{header}</h2>
         <Image {...imageProps} />
         {children}
-      </CourseLink>
-    </Link>
-  </Section>
+      </Section>
+    </CourseLink>
+  </Link>
 );
