@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import styled from "@emotion/styled";
 
 import { Icons } from "./Icons";
@@ -16,7 +16,11 @@ export type Props = {
 
 // https://reactsvgicons.com/search
 
-export const Icon: FC<Props> = ({ name, size = 2, ...rest }) => {
+export const Icon: FC<PropsWithChildren<Props>> = ({
+  name,
+  size = 2,
+  ...rest
+}) => {
   const Icon = styled(Icons[name])`
     color: ${({ theme }) => theme.font.regular};
   `;
