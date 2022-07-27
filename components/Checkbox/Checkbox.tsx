@@ -1,4 +1,4 @@
-import { FC, ChangeEvent, useRef } from "react";
+import { FC, PropsWithChildren, ChangeEvent, useRef } from "react";
 import styled from "@emotion/styled";
 
 import { boxShadow, transition } from "@/components/styles";
@@ -41,7 +41,7 @@ type Props = {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const Checkbox: FC<Props> = ({ onChange }) => {
+export const Checkbox: FC<PropsWithChildren<Props>> = ({ onChange }) => {
   const fieldId = useId();
   return (
     <Wrapper>

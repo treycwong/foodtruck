@@ -1,4 +1,4 @@
-import { FC, MouseEvent } from "react";
+import { FC, PropsWithChildren, MouseEvent } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
@@ -35,7 +35,10 @@ export type Props = {
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 } & IconProps;
 
-export const IconButton: FC<Props> = ({ onClick, ...props }) => (
+export const IconButton: FC<PropsWithChildren<Props>> = ({
+  onClick,
+  ...props
+}) => (
   <Button
     onClick={onClick}
     size={`${(props.size || 2) * 2}rem`}

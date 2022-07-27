@@ -1,4 +1,4 @@
-import { FC, ChangeEvent } from "react";
+import { FC, PropsWithChildren, ChangeEvent } from "react";
 import styled from "@emotion/styled";
 
 import { boxShadow, transition } from "@/components/styles";
@@ -48,7 +48,7 @@ type Props = {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const Switch: FC<Props> = ({ onChange }) => {
+export const Switch: FC<PropsWithChildren<Props>> = ({ onChange }) => {
   const fieldId = useId();
   return (
     <Wrapper>

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
 
@@ -98,7 +98,11 @@ type Props = {
   onThemeToggle: () => void;
 };
 
-export const Layout: FC<Props> = ({ children, isDark, onThemeToggle }) => (
+export const Layout: FC<PropsWithChildnre<Props>> = ({
+  children,
+  isDark,
+  onThemeToggle,
+}) => (
   <Wrapper>
     <Link href="/" passHref>
       <LogoLink>

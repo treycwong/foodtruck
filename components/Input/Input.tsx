@@ -1,4 +1,10 @@
-import { FC, ChangeEventHandler, InputHTMLAttributes, ReactChild } from "react";
+import {
+  FC,
+  PropsWithChildren,
+  ChangeEventHandler,
+  InputHTMLAttributes,
+  ReactChild,
+} from "react";
 import styled from "@emotion/styled";
 
 import { Icon, AvailableIcons } from "@/components/Icon";
@@ -81,7 +87,9 @@ export type Props = {
   feedback?: ReactChild;
 } & LabelProps;
 
-export const Input: FC<Props & InputHTMLAttributes<HTMLInputElement>> = ({
+export const Input: FC<
+  PropsWithChildren<Props> & InputHTMLAttributes<HTMLInputElement>
+> = ({
   label,
   height = 7,
   width = 20,

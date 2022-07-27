@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import styled from "@emotion/styled";
 
 import { boxShadow, borderRadius } from "@/components/styles";
@@ -17,7 +17,7 @@ const Section = styled.section`
     boxShadow(theme.components.shadow1, theme.components.shadow2)}
 `;
 
-export const Tile: FC<Props> = ({ header, children }) => (
+export const Tile: FC<PropsWithChildren<Props>> = ({ header, children }) => (
   <Section>
     <h2>{header}</h2>
     {children}
