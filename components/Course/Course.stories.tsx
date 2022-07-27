@@ -16,25 +16,22 @@ export const BasicCourse: ComponentStoryObj<typeof Course> = {
     await expect(screen.getByRole("link")).toBeInTheDocument();
   },
   args: {
-    header: "Hands-On React. Build advanced React JS Frontend with expert",
+    header: "Cowboys Food Truck",
     link: "/hands-on-reactjs",
     imageProps: {
       width: 1368,
       height: 770,
-      alt: "Logo for Hands-On React. Build advanced React JS Frontend with expert",
-      src: "/covers/hands-on_reactjs_cover.png",
+      alt: "Cowboys Food Truck",
+      src: "/covers/cowboys-food-truck.jpg",
     },
     children: (
       <>
-        React is the most popular library for building frontend web
-        applications. Step-by-step by diving into all the basics, I&apos;ll
-        introduce you to advanced concepts as well. We&apos;ll build the
-        minesweeper application from scratch We&apos;ll build the minesweeper
-        application from scratch:
+        Texas-inspired Malaysian twist. Affordable & Halal American BBQ,
+        Brisket, Ribs, Lambs & More.
         <ul>
-          <li>setup of the development environment</li>
-          <li>configuration of the React JS app</li>
-          <li>basic algorithms of Minesweeper</li>
+          <li>Location: Shell TTDI</li>
+          <li>Hours: Tues-Sun (6-10pm)</li>
+          <li>Price: RM16++</li>
         </ul>
       </>
     ),

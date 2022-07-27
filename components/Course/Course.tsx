@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import Image, { ImageProps } from "next/image";
 import styled from "@emotion/styled";
@@ -35,7 +35,12 @@ export type Props = {
   imageProps: ImageProps;
 };
 
-export const Course: FC<Props> = ({ children, header, link, imageProps }) => (
+export const Course: FC<PropsWithChildren<Props>> = ({
+  children,
+  header,
+  link,
+  imageProps,
+}) => (
   <Section>
     <Link href={link} passHref>
       <CourseLink>
